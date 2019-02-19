@@ -37,10 +37,13 @@ second and `trace-flags` - third.
 Field identifiers should be treated as unsigned byte numbers and should be
 encoded in big-endian bit order.
 
-When `trace-id` is represented as a byte array - first element of an array MUST
-be copied first. When array is represented as a memory block of 16 bytes -
-serialization of `trace-id` would be identical to `memcpy` method call on that
-memory block. Same applies to `parent-id` field.
+Fields `trace-id` and `parent-id` are defined as a byte arrays, NOT a
+long numbers. First element of an array MUST be copied first. When array is
+represented as a memory block of 16 bytes - serialization of `trace-id`
+would be identical to `memcpy` method call on that memory block. This
+may be a concern for implementations casting these fields to integers -
+protocol is NOT defining whether those byte arrays are ordered as big
+endian or little endian and have a sign bit.
 
 If padding of the field is required (`traceparent` needs to be serialized into
 the bigger buffer) - any number of bytes can be appended to the end of the
@@ -109,8 +112,11 @@ This corresponds to:
 
 List of up to 32 name-value pairs. Each list member starts with the 1 byte field
 identifier `0`. The format of list member is a single byte key length followed
-by the key value and single byte value length followed by the encoded value.
-Strings are transmitted in ASCII encoding.
+by the key value and single byte value length followed by the encoded
+value. Note, single byte length field allows keys and values up to 256
+bytes long. This limit is defined by [trace
+context](https://w3c.github.io/trace-context/#header-value)
+specification. Strings are transmitted in ASCII encoding.
 
 ``` abnf
 tracestate      = list-member 0*31( list-member )
