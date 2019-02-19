@@ -30,9 +30,9 @@ invalid `traceparent`. All zeroes in `trace-id` and `parent-id` invalidates the
 
 ## Serialization of `traceparent`
 
-Implementation SHOULD serialize fields into the field ordering sequence. In
-other words, `trace-id` field should be serialized first, `parent-id` second and
-`trace-flags` - third.
+Implementation MUST serialize fields into the field ordering sequence.
+In other words, `trace-id` field should be serialized first, `parent-id`
+second and `trace-flags` - third.
 
 Field identifiers should be treated as unsigned byte numbers and should be
 encoded in big-endian bit order.
