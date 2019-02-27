@@ -9,7 +9,7 @@ those as size of the field followed by the value.
 # `Traceparent` binary format
 
 The field `traceparent` encodes the version of the protocol and fields
-`trace-id`, `parent-id` and `recorded`. Each field starts with the one byte
+`trace-id`, `parent-id` and `trace-flags`. Each field starts with the one byte
 field identifier with the field value following immediately after it. Field
 identifiers are used as markers for additional verification of the value
 consistency and may be used in future for the versioning of the `traceparent`
@@ -18,7 +18,7 @@ field.
 ``` abnf
 traceparent     = version version_format  
 version         = 1BYTE                   ; version is 0 in the current spec
-version_format  = "{ 0x0 }" trace-id "{ 0x1 }" parent-id "{ 0x2 }" recorded
+version_format  = "{ 0x0 }" trace-id "{ 0x1 }" parent-id "{ 0x2 }" trace-flags
 trace-id        = 16BYTES
 parent-id       = 8BYTES
 trace-flags     = 1BYTE  ; only the least significant bit is used
