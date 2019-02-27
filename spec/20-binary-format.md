@@ -6,7 +6,12 @@ fields. This specification does not specify how these fields should be stored
 and send as a part of a binary payload. The basic implementation may serialize
 those as size of the field followed by the value.
 
-# `Traceparent` binary format
+Specification operates with bytes - unsigned 8-bit integer values
+representing values from `0` to `255`. Byte representation as a set of
+bits (big or little endian) MUST be defined by underlying platform and
+out of scope of this specification.
+
+## `Traceparent` binary format
 
 The field `traceparent` encodes the version of the protocol and fields
 `trace-id`, `parent-id` and `trace-flags`. Each field starts with the one byte
