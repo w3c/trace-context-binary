@@ -67,7 +67,7 @@ This corresponds to:
 
 - `trace-id` is
   `{75, 249, 47, 53, 119, 179, 77, 166, 163, 206, 146, 157, 0, 14, 71, 54}` or
-  `4bf9273577b34da6a3ce929d000e4736`.
+  `4bf92f3577b34da6a3ce929d000e4736`.
 - `parent-id` is `{52, 240, 103, 170, 11, 169, 2, 183}` or `34f067aa0ba902b7`.
 - `trace-flags` is `1` with the meaning `recorded` is true.
 
