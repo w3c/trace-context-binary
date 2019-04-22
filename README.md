@@ -2,22 +2,20 @@
 
 # Trace Context: binary protocol Specification
 
-This repository is associated with the [Trace Context: binary protocol](https://w3c.github.io/trace-context-binary/) specification.
+This repository is associated with the [Trace Context: binary
+protocol](https://w3c.github.io/trace-context-binary/) specification.
 
-Specification for distributed tracing context propagation format:
-
-- Trace Context: binary protocol
-  [Report](https://w3c.github.io/trace-context-binary/).
-  Status: Editor's draft.
-  - Changes are tracked on GitHub, communicated in meetings and e-mails
-    distribution list.
+Status: Editor's draft. Changes are tracked on GitHub, communicated in meetings
+and e-mails distribution list.
 
 ## Team Communication
 
-See [communication](https://github.com/w3c/distributed-tracing-wg#team-communication)
+See
+[communication](https://github.com/w3c/distributed-tracing-wg#team-communication)
 
-We appreciate feedback and contributions. Please make sure to read rationale documents when you have a question about particular
-decision made in specification.
+We appreciate feedback and contributions. Please make sure to read rationale
+documents when you have a question about particular decision made in
+specification.
 
 ## Goal
 
@@ -31,7 +29,7 @@ TODO: add link here
 
 ## Why are we doing this
 
-See [Why](https://github.com/w3c/distributed-tracing-wg#why-are-we-doing-this)
+See [why](https://github.com/w3c/distributed-tracing-wg#why-are-we-doing-this)
 
 ## Contributing
 
