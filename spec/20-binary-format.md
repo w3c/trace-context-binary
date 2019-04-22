@@ -3,7 +3,7 @@
 Binary format document describes how to encode each field - `traceparent` and
 `tracestate`. The binary format should be used to encode the values of these
 fields. This specification does not specify how these fields should be stored
-and send as a part of a binary payload. The basic implementation may serialize
+and sent as a part of a binary payload. The basic implementation may serialize
 those as size of the field followed by the value.
 
 Specification operates with bytes - unsigned 8-bit integer values
