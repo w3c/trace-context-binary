@@ -39,8 +39,7 @@ Implementation MUST serialize fields into the field ordering sequence.
 In other words, `trace-id` field should be serialized first, `parent-id`
 second and `trace-flags` - third.
 
-Field identifiers should be treated as unsigned byte numbers and should be
-encoded in big-endian bit order.
+Field identifiers should be treated as unsigned bytes.
 
 Fields `trace-id` and `parent-id` are defined as a byte arrays, NOT a
 long numbers. First element of an array MUST be copied first. When array is
@@ -69,7 +68,7 @@ This corresponds to:
   `{75, 249, 47, 53, 119, 179, 77, 166, 163, 206, 146, 157, 0, 14, 71, 54}` or
   `4bf92f3577b34da6a3ce929d000e4736`.
 - `parent-id` is `{52, 240, 103, 170, 11, 169, 2, 183}` or `34f067aa0ba902b7`.
-- `trace-flags` is `1` with the meaning `recorded` is true.
+- `trace-flags` is `1` with the meaning `sampled` flag is set.
 
 ## `tracestate` binary format
 
